@@ -6,7 +6,7 @@ import { getUsersForSidebar } from "../controllers/message.controller";
 const router = express.Router();
 
 router.get("/users",protectRoute,getUsersForSidebar)
-router.get("/:id")
+router.get("/:id",protectRoute,gerMessages)
 
 
 export default  router;
