@@ -12,6 +12,7 @@ const SignUpPage = () => {
     email: "",
     password: "",
   });
+  
   const { signup, isSigningUp } = useAuthStore();
   const validateForm = () => { };
   const handleSubmit = (e) => {
@@ -43,6 +44,7 @@ const SignUpPage = () => {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <User className="size-5 text-base-content/40" />
                 </div>
+
 
                 <input
                   type="text"
