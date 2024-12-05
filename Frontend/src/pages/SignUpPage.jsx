@@ -1,7 +1,7 @@
 // page> SiginUpPage.jsx 
 import React, { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import { MessageSquare,User } from "lucide-react";
+import { Mail, MessageSquare,User } from "lucide-react";
 
 
 const SignUpPage = () => {
@@ -52,11 +52,29 @@ const SignUpPage = () => {
                   placeholder="john Doe"
                   value={formData.fullName}
                   onChange={
-                    (e) => setFormData({ ...formData, fullName: e.target.value })
-                  }
+                    (e) => setFormData({ ...formData, fullName: e.target.value })}
                 />
               </div>
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-medium">Email </span>
+              </label>
+              <div className="relative" >
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Mail className="size-5 text-base-content/40" />
+                </div>
+                <input type="mail"
+                className={`input input-bordered w-full pl-10`}
+                placeholder="you@gmail.com"
+                value={formData.email}
+                onChange={(e)=>setFormData({...formData,email: e.target.value})}
+                />
+             
+              </div>
+            </div>
+                    
+
           </form>
         </div>
       </div>
