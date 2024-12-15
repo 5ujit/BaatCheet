@@ -1,6 +1,7 @@
 // sotre> useAuthStore.js
 import { create } from "zustand";
 import { axiosInstance } from "../lib/axios";
+import SignUpPage from "../pages/SignUpPage";
 
 export const useAuthStore = create((set)=>({
     authUser:null,
@@ -24,5 +25,8 @@ export const useAuthStore = create((set)=>({
         }finally{
             set({isCheckingAuth:false})
         }
+    },
+    signup: async(data)=>{
+        
     }
 }))
