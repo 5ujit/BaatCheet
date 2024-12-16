@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import{} 
+import { Link } from "react-router-dom";
 import {
   Eye,
   EyeOff,
-  
   Loader2,
   Lock,
   LucideFolderArchive,
@@ -12,6 +11,8 @@ import {
   MessageSquare,
   User,
 } from "lucide-react";
+import AuthImagePattern from "../components/AouthImagepttern";
+import toast from "react-hot-toast";
 
 // page> SiginUpPage.jsx
 const SignUpPage = () => {
@@ -24,9 +25,20 @@ const SignUpPage = () => {
 
   const { signup, isSigningUp } = useAuthStore();
 
-  const validateForm = () => {};
+  const validateForm = () => {
+    if (!fullData.fullName.trim()) return toast.error("Full name is required");
+    if (!fullData.email.trim()) return toast.error("email is required");
+    if (!/\S+@\S+\.\S+/.test(formData.email))return toast.error("Invalid eamail format");  
+    if(!formData.password)return toast.error("password is required");
+    if(formData.password.length<6) return toast.error("Password must  be  at least 6 characters")
+      return true;
+    };
+    
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+    const success = validateForm()
+    if(success===true)signup(formData)
   };
 
   return (
@@ -144,21 +156,41 @@ const SignUpPage = () => {
           </form>
           <div className="text-center">
             <p className="text-base-content/60">
-            Already have anccount?{" "}
-            <Link to="/Login" className="Link link-primary "> 
-            Sign in 
-            </Link>
-
+              Already have anccount?{" "}
+              <Link to="/Login" className="Link link-primary ">
+                Sign in
+              </Link>
             </p>
-
           </div>
         </div>
       </div>
+
+      {/* right side */}
+      <AuthImagePattern
+        title="join out community"
+        subtitle="Connect with friends, shere moments, and stay in touch with your loved ones"
+      />
     </div>
   );
 };
 
 export default SignUpPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import React, { useState } from "react";
 // import { useAuthStore } from "../store/useAuthStore";
