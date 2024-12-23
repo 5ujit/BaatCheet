@@ -1,4 +1,4 @@
-// auth.route.js 
+//BACKEND > SRC> routes > auth.route.js 
 
 import express from "express";
 import { login, logout, signup } from "../controllers/auth.controller.js";
