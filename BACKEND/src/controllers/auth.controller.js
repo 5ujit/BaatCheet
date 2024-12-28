@@ -17,7 +17,7 @@ export  const signup = async(req,res)=>{
         return res.status(400).json({message:"Password must be at least 6 characters"})
      }
      const  user= await User.findOne({email})
-     if (user)return res.status(400).json({messsage: "Email already exists"});
+     if (user)return res.status(400).json({message: "Email already exists"});
       const salt = await bcrypt.genSalt(10)
       const hashedPassword = await bcrypt.hash(password,salt)
 
@@ -83,7 +83,7 @@ export  const login = async(req,res)=>{
 
 export  const logout =(req,res)=>{
   try {
-    res.cookie("jwt","", {mexAge:0})
+    res.cookie("jwt","", {maxAge:0})
     res.status(200).json({message:"Logged out successfully "});
     
   } catch (error) {

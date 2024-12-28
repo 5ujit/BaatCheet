@@ -10,8 +10,9 @@ import {
   MessageSquare,
   User,
 } from "lucide-react";
-import AuthImagePattern from "../components/AouthImagepttern";
+
 import toast from "react-hot-toast";
+import AuthImagePattern from "../components/AuthImagePattern.jsx";
 
 // page> SiginUpPage.jsx
 const SignUpPage = () => {
@@ -33,7 +34,6 @@ const SignUpPage = () => {
 
     return true;
   };
-
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -168,6 +168,7 @@ const SignUpPage = () => {
       </div>
 
       {/* right side */}
+
       <AuthImagePattern
         title="join out community"
         subtitle="Connect with friends, shere moments, and stay in touch with your loved ones"
