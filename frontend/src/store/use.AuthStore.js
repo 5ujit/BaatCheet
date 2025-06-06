@@ -9,15 +9,6 @@ export const useAuthStore= create((set)=>({
 
     isCheckingAuth: true,
 
-        /*
-         authUser: null,
-  isSigningUp: false,
-  isLoggingIn: false,
-  isUpdatingProfile: false,
-  isCheckingAuth: true,
-  onlineUsers: [],
-  socket: null,
-        */
 
 
 
@@ -35,3 +26,16 @@ export const useAuthStore= create((set)=>({
     }
 
 }))
+
+
+
+
+        /*
+         authUser: null,
+  isSigningUp: false,
+  isLoggingIn: false,
+  isUpdatingProfile: false,
+  isCheckingAuth: true,
+  onlineUsers: [],
+  socket: null,
+        */
