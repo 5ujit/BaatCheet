@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useAuthStore } from "../store/use.AuthStore";
-import { Eye, EyeOff, Lock, Mail, MessageSquare, User } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
 const SignUpPage = () => {
-  const [showPassword, setPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormdata] = useState({
     fullName: "",
     email: "",
@@ -13,7 +13,7 @@ const SignUpPage = () => {
   });
   const { signup, isSigningUp } = useAuthStore();
   const validateForm = () => {
-    if (!fullData.fullName.trim()) return toast.error("Full name is required");
+    if (!formData.fullName.trim()) return toast.error("Full name is required");
     if (!formData.email.trim()) return toast.error("Invalid email format");
     if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
     if (!formData.password) return toast.error("password is required");
