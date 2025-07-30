@@ -1,9 +1,17 @@
 import express from "express"
+import { login, logout, signup } from "../controllers/auth.controller.js";
 
 const router = express.Router();
+
+ 
+router.get( "/signup",signup);
+
+router.get( "/login", login);
+ 
+router.get( "/logout" ,  logout);
 
 export default router;
 
 
 
-// my dought is if we are imporiting this in indexjs with authroute if u can see in line no 7  but here we did't defire any ting tthing with that name willl u plss clear me 
+// auth.route.js
